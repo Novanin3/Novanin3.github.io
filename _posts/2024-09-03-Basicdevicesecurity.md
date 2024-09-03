@@ -5,39 +5,50 @@ category: [CCNA]
 ---
 
 
-![Alt text](/assets/img/kioptrix/john.jpg)
-
 # QUESTIONS
-1. Change the hostnames of the router and switch to the appropriate names (R1, SW1)
-##Use the 'hostname' command in global configuration mode##
+1. Change the hostnames of the router and switch to the appropriate names (R1, SW1).Use the 'hostname' command in global configuration mode
+
+Using the commands i changed the host to "R1"
+
+```bash 
+R1#config t
+Enter configuration commands, one per line. End with CNTL/Z.
+R1(config)#hostname R1
+
+```
 
 2. Configure an unencrypted enable password of 'CCNA' on both devices
- i used `enable password CCNA` to set a password to my router, 
+
+ i used `enable password CCNA` to set a password to my router.
+
 ```bash
 R1#config t
 Enter configuration commands, one per line. End with CNTL/Z.
 R1(config)#enable password CCNA
 
 ```
+
 3. Exit back to user EXEC mode and test the password
+
+GLOBAL CONFIG MODE
 
 ```bash 
 R1(config)#exit
 
 ```
 
-EXEC MODE
+PRIVILLEGE EXEC MODE
 ```bash
 R1#
 %SYS-5-CONFIG_I: Configured from console by console
 
 ```
-USER MODE 
+USER EXEC MODE 
 ```bash
 R1#exit
 
 ```
-4. View the password in the running configuration
+View the password in the running configuration
 
 ## command `show running-config` to see the active configuration file on the device.
 ```bash
@@ -81,6 +92,7 @@ R1#
 
 ```
 6. View the password in the running configuration
+
 ```bash
 R1#show running-config
 Building configuration...
@@ -108,9 +120,10 @@ no ipv6 cef
 !
 ```
 
-7. Configure a more secure, encrypted enable password of 'Cisco' on both devices
+ Configure a more secure, encrypted enable password of 'Cisco' on both devices
 
 i used `enable secret` as my command to encrypt the enabled password CCNA.
+
 ```bash
 R1#config t
 Enter configuration commands, one per line. End with CNTL/Z.
@@ -121,12 +134,14 @@ R1(config)#enable secret Cisco
 8. Exit back to user EXEC mode and then return to privileged EXEC mode.
 Which password do you have to use? 
 Answer:`Cisco` 
+
 ```bash
 R1(config)#exit
 R1#
 %SYS-5-CONFIG_I: Configured from console by console
 
 R1#exit
+
 ```
 
 9. View the passwords in the running configuration.
@@ -164,12 +179,12 @@ no ipv6 cef
 ```
 
 
-10. What encryption type number is used for the encrypted 'enable password'?
+ What encryption type number is used for the encrypted 'enable password'?
 ## ANSWER:5 MD5
-12. What encryption type number is used for the encrypted 'enable secret'?
+ What encryption type number is used for the encrypted 'enable secret'?
 ### ANSWER: Type 7
 
-13. Save the running configuration to the startup configuration
+Save the running configuration to the startup configuration
 To save the configuration one can use some commands like :`write,write memory`.
 ```bash
 R1#write
@@ -177,6 +192,7 @@ Building configuration...
 [OK]
 ```
 Once saved  we use `startup-config` to make sure the configuration will be loaded upon restarting on the device.
+
 ```bash
 R1#show startup-config
 Using 763 bytes
@@ -205,12 +221,3 @@ no ipv6 cef
 !
 ``` 
 
-
-
-
-
-
-
-ip addr = 19
-
-## RECON
