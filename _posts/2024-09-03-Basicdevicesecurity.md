@@ -3,6 +3,7 @@ title: LAB SECURITY
 date : 2024-04-23 03:07:00
 category: [CCNA]
 ---
+![Alt text](/assets/img/kioptrix/topology.jpg)
 
 
 # QUESTIONS
